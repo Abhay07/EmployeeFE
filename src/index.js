@@ -18,7 +18,7 @@ const callUpdateService = (param)=>{
 		method:'post',
 		url:'http://ec2-18-188-219-160.us-east-2.compute.amazonaws.com:8080/api/employees',
 		data:param,
-		headers:{'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZmQ4MjE4MWZiYzFlMGMzOGQzZGJjNCIsImlhdCI6MTU0MzM0MDU2OCwiZXhwIjoxNTQzNDI2OTY3fQ.QdUkYtFGAZaqeySP80QVxRgC2Au9ovuhuJnW0lu6Chc'}
+		headers:{'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZmQ4ZmRjYjQ5NTMxMDdjMmYyM2VmOCIsImlhdCI6MTU0MzM0NDA5MiwiZXhwIjoxNTQzNDMwNDkxfQ.ySNaMoKMzf5QEUA-t3VonuMjbLvl_nENYWpbek3ceiU'}
 	},param)
 	.then((res)=>{
 		console.log('Succesful Updation')
