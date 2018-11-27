@@ -127,7 +127,7 @@ class List extends React.Component{
 							
 							{	
 								val.name.editable ? 
-								<input type="text"  onBlur={(e)=> this.updateName(index,val._id,e.target.value,val.surName.value)}/>
+								<input type="text"  onBlur={(e)=> this.updateName(index,val.id,e.target.value,val.surName.value)}/>
 								:
 								<span onClick={(e) =>this.nameClicked(index)} > { val.name.value } </span>
 							}
@@ -136,7 +136,7 @@ class List extends React.Component{
 							<b>Surname:</b> 
 							{	
 								val.surName.editable ?  
-								<input type="text" onBlur={(e)=> this.updateSurname(index,val._id,val.name.value, e.target.value)}/> 
+								<input type="text" onBlur={(e)=> this.updateSurname(index,val.id,val.name.value, e.target.value)}/> 
 								:
 								<span onClick={(e) =>this.surnameClicked(index)} > { val.surName.value } </span>
 							}
