@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+}
+
+.header{
+	background-color: pink;
+	padding: 10px;
+	font-size: 30px;
+}
+
+.listWrapper{
+	display: flex;
+	font-size: 20px;
+}
+
+
+.listContainer{
+	padding: 10px;
+}
+
+.btnContainer{
+	text-align: right;
+}
+
+.addButton{
+	outline: none;
+	border-radius: 0;
+	padding: 10px;
+	box-shadow: none;
+	border: none;
+	background-color: #8ec6ff;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+
+.name{
+	width: 200px;
+}
