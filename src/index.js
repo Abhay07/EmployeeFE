@@ -35,6 +35,7 @@ class List extends React.Component{
 		this.nameClicked = this.nameClicked.bind(this);
 		this.surnameClicked = this.surnameClicked.bind(this);
 		this.addEmployee = this.addEmployee.bind(this);
+		this.saveDetails = this.saveDetails.bind(this);
 	}
 
 	nameClicked(i){
@@ -49,23 +50,21 @@ class List extends React.Component{
 		this.setState({list:list});
 	}
 
-	updateName(index, id,firstName,lastName){
+	updateName(index, firstName){
 		const list = this.state.list;
 		list[index].name.value = firstName;
-		list[index].name.editable = false;
 		this.setState({list:list});
-		const param = {};
-		param.Name = firstName;
-		param.Surname = lastName;
-		if(id){
-			param.Id = id;
-		}
-		callUpdateService(param);
 	}
 
-	updateSurname(index, id,firstName,lastName){
+	updateSurname(index, lastName){
 		const list = this.state.list;
 		list[index].surName.value = lastName;
+		this.setState({list:list});
+	}
+
+	saveDetails(index, id,firstName,lastName){
+		const list = this.state.list;
+		list[index].name.editable = false;
 		list[index].surName.editable = false;
 		this.setState({list:list});
 		const param = {};
@@ -127,7 +126,7 @@ class List extends React.Component{
 							
 							{	
 								val.name.editable ? 
-								<input type="text"  onBlur={(e)=> this.updateName(index,val.id,e.target.value,val.surName.value)}/>
+								<input type="text"  onBlur={(e)=> this.updateName(index, e.target.value)}/>
 								:
 								<span onClick={(e) =>this.nameClicked(index)} > { val.name.value } </span>
 							}
@@ -136,11 +135,15 @@ class List extends React.Component{
 							<b>Surname:</b> 
 							{	
 								val.surName.editable ?  
-								<input type="text" onBlur={(e)=> this.updateSurname(index,val.id,val.name.value, e.target.value)}/> 
+								<input type="text" onBlur={(e)=> this.updateSurname(index, e.target.value)}/> 
 								:
 								<span onClick={(e) =>this.surnameClicked(index)} > { val.surName.value } </span>
 							}
 						</div>
+						{
+							(val.surName.editable || val.name.editable) &&
+							<button className={styles.doneBtn} onClick={(e)=>this.saveDetails(index,val.id,val.name.value,val.surName.value)}>Save</button>
+						}
 					 </div>
 					
 					 

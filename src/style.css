@@ -11,6 +11,7 @@ body{
 .listWrapper{
 	display: flex;
 	font-size: 20px;
+	align-items: center;
 }
 
 
@@ -37,4 +38,17 @@ body{
 
 .name{
 	width: 200px;
+}
+
+.surname{
+	width: 200px;
+}
+
+.doneBtn{
+	margin-left: 10px;
+    border: none;
+    background: #8ec6ff;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: white;
 }
